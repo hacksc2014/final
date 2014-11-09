@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BeatShaker</string>
+    <string name="title_section1">Home</string>
+    <string name="title_section2">History Files</string>
+    <string name="title_section3">Help</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example"></string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_">Activity</string>
+    <string name="toggle_on">ON</string>
+    <string name="toggle_off">OFF</string>
+    <string name="recBtn">Record</string>
+    <string name="playbackButton">Play</string>
+    <string name="clearButton">Clear</string>
+
+</resources>

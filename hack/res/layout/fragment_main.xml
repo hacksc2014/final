@@ -1,0 +1,155 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.hack.MainActivity$PlaceholderFragment" >
+
+    <TextView
+        android:id="@+id/section_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/FrameLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin" >
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="10dip"
+            android:visibility="invisible" />
+
+        <EditText
+            android:id="@+id/introText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:clickable="false"
+            android:editable="false"
+            android:focusable="false"
+            android:text="    Hold the button to start!"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
+
+        <ImageButton
+            android:id="@+id/recBtn"
+            android:layout_width="204dp"
+            android:layout_height="204dp"
+            android:layout_gravity="center_horizontal"
+            android:adjustViewBounds="true"
+            android:background="#00000000"
+            android:fitsSystemWindows="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/recordbutton" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageButton
+                android:id="@+id/cymbalBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:background="#00000000"
+                android:paddingRight="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/cymbal" />
+
+            <ImageButton
+                android:id="@+id/drumBtn"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:background="#00000000"
+                android:scaleType="fitXY"
+                android:src="@drawable/drum" />
+
+            <ImageButton
+                android:id="@+id/claveBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:background="#00000000"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/clave" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:orientation="horizontal" >
+
+            <MultiAutoCompleteTextView
+                android:id="@+id/durationTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:editable="false"
+                android:focusable="false"
+                android:textColor="#ffffff"
+                android:text="Duration: " >
+
+                <requestFocus />
+            </MultiAutoCompleteTextView>
+
+            <MultiAutoCompleteTextView
+                android:id="@+id/durationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:editable="false"
+                android:ems="10"
+                android:focusable="false"
+                android:paddingBottom="20dp"
+                android:text="⬆︎Press the button!"
+                android:textColor="#ffffff" >
+
+                <requestFocus />
+            </MultiAutoCompleteTextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/clearButton"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="Clear" />
+
+            <Button
+                android:id="@+id/playbackButton"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingLeft="50dp"
+                android:text="Play Back" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
