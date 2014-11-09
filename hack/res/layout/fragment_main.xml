@@ -46,9 +46,11 @@
 
         <ImageButton
             android:id="@+id/recBtn"
-            android:layout_width="204dp"
-            android:layout_height="204dp"
+            android:layout_width="189dp"
+            android:layout_height="189dp"
             android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:adjustViewBounds="true"
             android:background="#00000000"
             android:fitsSystemWindows="false"
@@ -63,9 +65,10 @@
                 android:id="@+id/cymbalBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:background="#00000000"
-                android:paddingRight="5dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/cymbal" />
 
@@ -73,6 +76,8 @@
                 android:id="@+id/drumBtn"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:background="#00000000"
                 android:scaleType="fitXY"
@@ -82,12 +87,13 @@
                 android:id="@+id/claveBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:background="#00000000"
-                android:paddingLeft="10dp"
-                android:paddingTop="10dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/clave" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -103,8 +109,9 @@
                 android:clickable="false"
                 android:editable="false"
                 android:focusable="false"
-                android:textColor="#ffffff"
-                android:text="Duration: " >
+                android:paddingBottom="20dp"
+                android:text="Duration: "
+                android:textColor="#ffffff" >
 
                 <requestFocus />
             </MultiAutoCompleteTextView>
@@ -115,7 +122,6 @@
                 android:layout_height="wrap_content"
                 android:clickable="false"
                 android:editable="false"
-                android:ems="10"
                 android:focusable="false"
                 android:paddingBottom="20dp"
                 android:text="⬆︎Press the button!"
@@ -138,7 +144,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="left"
-                android:text="Clear" />
+                android:text="Clear"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/playbackButton"
@@ -148,7 +157,11 @@
                 android:layout_weight="1"
                 android:gravity="right"
                 android:paddingLeft="50dp"
-                android:text="Play Back" />
+                android:text="Play Back"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
         </LinearLayout>
     </LinearLayout>
 

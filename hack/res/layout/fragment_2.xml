@@ -24,21 +24,13 @@
             android:paddingTop="@dimen/activity_vertical_margin"
             >
 
-            <MediaController
-                android:id="@+id/mediaController1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-            </MediaController>
-
-            <Gallery
-                android:id="@+id/gallery1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
             <MultiAutoCompleteTextView
                 android:id="@+id/multiAutoCompleteTextView1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:focusable="false"
+                android:clickable="false"
+                android:editable="false"
                 android:ems="10"
                 android:text="Credits:"
                 android:textStyle="bold" />
@@ -51,9 +43,11 @@
                 android:focusable="false"
                 android:clickable="false"
                 android:editable="false"
+                android:textColor="#FFFFFF"
                 android:paddingBottom="20dp"
                 android:paddingLeft="30dp"
-                android:text="Brandon\nSahil\nandrew\nRyan" >
+                android:textStyle="italic"
+                android:text="Ryan Lu-UI Design, Algorithm\nBrandon Cen-Algorithm\nAndrew Chang-Algorithm, UI      Design\nSahil Lele" >
 
                 <requestFocus />
             </MultiAutoCompleteTextView>
@@ -87,10 +81,12 @@
                 android:layout_height="wrap_content"
                 android:focusable="false"
                 android:clickable="false"
+                android:textStyle="italic"
                 android:editable="false"
+                android:textColor="#FFFFFF"
                 android:ems="10"
                 android:paddingLeft="30dp"
-                android:text="Hold the button to start making beats\nSwitch the &quot;record&quot; box to record" />
+                android:text="1)Click the instrument images to swtich instrument\n2)Hold the button to start making beats\n3)FLICK!" />
            
         </LinearLayout>
 

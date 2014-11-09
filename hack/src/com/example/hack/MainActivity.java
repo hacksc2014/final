@@ -185,7 +185,7 @@ NavigationDrawerFragment.NavigationDrawerCallbacks, SensorEventListener {
 
 				}
 			} else {
-				iv.setVisibility(View.INVISIBLE);
+//				iv.setVisibility(View.INVISIBLE);
 			}
 		}
 
@@ -235,9 +235,7 @@ NavigationDrawerFragment.NavigationDrawerCallbacks, SensorEventListener {
 			mp = null;
 		}
 	}
-	PlayAsync newPA() {
-		return new PlayAsync();
-	}
+	
 	public class PlayAsync extends AsyncTask<String, String, String> {
 
 		// Show Progress bar before downloading Music
@@ -294,10 +292,11 @@ NavigationDrawerFragment.NavigationDrawerCallbacks, SensorEventListener {
 //				PlaceholderFragment.newInstance(position + 1)).commit();
 		switch (position+1) {
 		case 1:
+			PlaceholderFragment pf = new PlaceholderFragment();
 			fragmentManager
 			.beginTransaction()
 			.replace(R.id.container,
-					PlaceholderFragment.newInstance(position + 1)).commit();
+					pf.newInstance(position + 1)).commit();
 			break;
 		case 2:
 
@@ -352,9 +351,25 @@ NavigationDrawerFragment.NavigationDrawerCallbacks, SensorEventListener {
 	 * A placeholder fragment containing a simple view.
 	 */
 
+	  OnClickListener listener = new OnClickListener(){ 
+		public void onClick(View v){
+			for (int i = 0; i < final_index; i++){
+				if (i ==0){
+					SystemClock.sleep(playback[i]);
+					new PlayAsync().execute("","","");
+					//							s = new PlayAsync();
+//					s.execute("","","");
+				}else{
+					SystemClock.sleep(playback[i] - playback[i-1]);
+					new PlayAsync().execute("","","");
+//					s.execute("","","");
+				}
+			}
+		}
+	};
 
 
-	public static class PlaceholderFragment extends Fragment {
+	public  class PlaceholderFragment extends Fragment {
 		/**
 		 * The fragment argument representing the section number for this
 		 * fragment.
@@ -366,12 +381,13 @@ NavigationDrawerFragment.NavigationDrawerCallbacks, SensorEventListener {
 		ImageButton drumBtn;
 		ImageButton claveBtn;
 
+		
 		private Button playback_button;
 
 		/**
 		 * Returns a new instance of this fragment for the given section number.
 		 */
-		public static PlaceholderFragment newInstance(int sectionNumber) {
+		public  PlaceholderFragment newInstance(int sectionNumber) {
 			PlaceholderFragment fragment = new PlaceholderFragment();
 			Bundle args = new Bundle();
 			args.putInt(ARG_SECTION_NUMBER, sectionNumber);
@@ -383,6 +399,8 @@ NavigationDrawerFragment.NavigationDrawerCallbacks, SensorEventListener {
 
 		}
 
+		
+		
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
@@ -403,6 +421,7 @@ NavigationDrawerFragment.NavigationDrawerCallbacks, SensorEventListener {
 			claveBtn.setOnClickListener(new OnClickListener(){
 				public void onClick(View v){
 					mp = MediaPlayer.create(getActivity(), R.raw.clave);
+					Toast.makeText(getActivity(), "Instrument set to: Clave", Toast.LENGTH_SHORT).show();
 					music = 1;
 					Log.d("MP" , "  MP set to CLAVE"+ "  " + mp);
 				}
@@ -412,6 +431,7 @@ NavigationDrawerFragment.NavigationDrawerCallbacks, SensorEventListener {
 			cymbalBtn.setOnClickListener(new OnClickListener(){
 				public void onClick(View v){
 					mp = MediaPlayer.create(getActivity(), R.raw.hihatcut);
+					Toast.makeText(getActivity(), "Instrument set to: Hit Hat", Toast.LENGTH_SHORT).show();
 					music = 2;
 					Log.d("MP" , "  MP set to HIHATCUT"+ "  " + mp);
 				}
@@ -421,6 +441,7 @@ NavigationDrawerFragment.NavigationDrawerCallbacks, SensorEventListener {
 			drumBtn.setOnClickListener(new OnClickListener(){
 				public void onClick(View v){
 					mp = MediaPlayer.create(getActivity(), R.raw.snare_drum);
+					Toast.makeText(getActivity(), "Instrument set to: Drum", Toast.LENGTH_SHORT).show();
 					music = 3;
 					Log.d("MP" , "  MP set to DRUM"+ "  " + mp);
 				}
@@ -428,20 +449,7 @@ NavigationDrawerFragment.NavigationDrawerCallbacks, SensorEventListener {
 
 
 
-			playback_button.setOnClickListener(new OnClickListener(){
-				public void onClick(View v){
-					for (int i = 0; i < final_index; i++){
-						if (i ==0){
-							SystemClock.sleep(playback[i]);
-							//							s = new PlayAsync();
-//							s.execute("","","");
-						}else{
-							SystemClock.sleep(playback[i] - playback[i-1]);
-//							s.execute("","","");
-						}
-					}
-				}
-			});
+			playback_button.setOnClickListener(listener);
 			recBtn.setOnTouchListener(new OnTouchListener(){
 
 				@SuppressLint("NewApi")
